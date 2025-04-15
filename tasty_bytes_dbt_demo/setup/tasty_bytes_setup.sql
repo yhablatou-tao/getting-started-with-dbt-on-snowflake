@@ -1,12 +1,12 @@
 USE ROLE accountadmin;
 
 CREATE OR REPLACE DATABASE tasty_bytes_dbt_db; -- target
-CREATE OR REPLACE  SCHEMA tasty_bytes_dbt_db.integrations; -- API Integration and External Access Integration
+CREATE OR REPLACE SCHEMA tasty_bytes_dbt_db.integrations; -- API Integration and External Access Integration
 
-CREATE OR REPLACE  DATABASE tb_101; -- source
-CREATE OR REPLACE  SCHEMA tb_101.raw;
+CREATE OR REPLACE DATABASE tb_101; -- source
+CREATE OR REPLACE SCHEMA tb_101.raw;
 
-CREATE OR REPLACE  WAREHOUSE tasty_bytes_dbt_wh
+CREATE OR REPLACE WAREHOUSE tasty_bytes_dbt_wh
 WAREHOUSE_SIZE = 'XLARGE';
 
 CREATE OR REPLACE FILE FORMAT tb_101.public.csv_ff 
