@@ -1,2 +1,2 @@
 select *
-from {{ source('tb_101_customer', 'CUSTOMER_LOYALTY') }}
+from {{ source('tb_101', 'CUSTOMER_LOYALTY') }}

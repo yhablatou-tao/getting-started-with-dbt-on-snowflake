@@ -1,2 +1,2 @@
 SELECT *
-FROM {{ source('tb_101_pos', 'FRANCHISE') }}
+FROM {{ source('tb_101', 'FRANCHISE') }}

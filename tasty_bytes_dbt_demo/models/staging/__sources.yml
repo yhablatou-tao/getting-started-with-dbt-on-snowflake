@@ -1,9 +1,9 @@
 version: 2
 sources:
-- name: tb_101_pos
+- name: tb_101
   description: 'Point of Sale source data'
   database: tb_101
-  schema: RAW_POS
+  schema: RAW
   tables:
   - name: COUNTRY
     description: 'Country reference data'
@@ -136,7 +136,7 @@ sources:
       data_tests:
         - not_null
         - relationships:
-            to: source('tb_101_pos', 'ORDER_HEADER')
+            to: source('tb_101', 'ORDER_HEADER')
             field: ORDER_ID
     - name: MENU_ITEM_ID
       description: 'Foreign key to menu'
@@ -176,14 +176,14 @@ sources:
       data_tests:
         - not_null
         - relationships:
-            to: source('tb_101_pos', 'TRUCK')
+            to: source('tb_101', 'TRUCK')
             field: TRUCK_ID
     - name: LOCATION_ID
       description: 'Foreign key to location'
       data_tests:
         - not_null
         - relationships:
-            to: source('tb_101_pos', 'LOCATION')
+            to: source('tb_101', 'LOCATION')
             field: LOCATION_ID
     - name: CUSTOMER_ID
       description: 'Customer identifier'
@@ -269,17 +269,12 @@ sources:
       description: 'Foreign key to franchise'
       data_tests:
         - relationships:
-            to: source('tb_101_pos', 'FRANCHISE')
+            to: source('tb_101', 'FRANCHISE')
             field: FRANCHISE_ID
     - name: TRUCK_OPENING_DATE
       description: 'Date truck began operations'
       data_tests:
         - not_null
-- name: tb_101_customer
-  description: ''
-  database: tb_101
-  schema: RAW_CUSTOMER
-  tables:
   - name: CUSTOMER_LOYALTY
     description: ''
     columns:

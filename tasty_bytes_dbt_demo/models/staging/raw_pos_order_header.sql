@@ -1,2 +1,2 @@
 SELECT *
-FROM {{ source('tb_101_pos', 'ORDER_HEADER') }}
+FROM {{ source('tb_101', 'ORDER_HEADER') }}
