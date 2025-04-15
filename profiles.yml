@@ -1,0 +1,19 @@
+tasty_bytes:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      account: ''
+      user: ''
+      role: accountadmin
+      database: dbt_lab
+      schema: dev
+      warehouse: dbt_lab_wh
+    prod:
+      type: snowflake
+      account: ''
+      user: ''
+      role: accountadmin
+      database: dbt_lab
+      schema: prod
+      warehouse: dbt_lab_wh
