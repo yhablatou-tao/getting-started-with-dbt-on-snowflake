@@ -27,7 +27,8 @@ CREATE OR REPLACE TABLE tb_101.raw.country
     city_id NUMBER(19,0),
     city VARCHAR(16777216),
     city_population VARCHAR(16777216)
-);
+) 
+COMMENT = '{"origin":"sf_sit-is", "name":"tasty-bytes-dbt", "version":{"major":1, "minor":0}, "attributes":{"is_quickstart":0, "source":"sql"}}';
 
 -- franchise table build
 CREATE OR REPLACE TABLE tb_101.raw.franchise 
@@ -39,7 +40,8 @@ CREATE OR REPLACE TABLE tb_101.raw.franchise
     country VARCHAR(16777216),
     e_mail VARCHAR(16777216),
     phone_number VARCHAR(16777216) 
-);
+)
+COMMENT = '{"origin":"sf_sit-is", "name":"tasty-bytes-dbt", "version":{"major":1, "minor":0}, "attributes":{"is_quickstart":0, "source":"sql"}}';
 
 -- location table build
 CREATE OR REPLACE TABLE tb_101.raw.location
@@ -51,7 +53,8 @@ CREATE OR REPLACE TABLE tb_101.raw.location
     region VARCHAR(16777216),
     iso_country_code VARCHAR(16777216),
     country VARCHAR(16777216)
-);
+)
+COMMENT = '{"origin":"sf_sit-is", "name":"tasty-bytes-dbt", "version":{"major":1, "minor":0}, "attributes":{"is_quickstart":0, "source":"sql"}}';
 
 -- menu table build
 CREATE OR REPLACE TABLE tb_101.raw.menu
@@ -67,7 +70,8 @@ CREATE OR REPLACE TABLE tb_101.raw.menu
     cost_of_goods_usd NUMBER(38,4),
     sale_price_usd NUMBER(38,4),
     menu_item_health_metrics_obj VARIANT
-);
+)
+COMMENT = '{"origin":"sf_sit-is", "name":"tasty-bytes-dbt", "version":{"major":1, "minor":0}, "attributes":{"is_quickstart":0, "source":"sql"}}';
 
 -- truck table build 
 CREATE OR REPLACE TABLE tb_101.raw.truck
@@ -86,7 +90,8 @@ CREATE OR REPLACE TABLE tb_101.raw.truck
     ev_flag NUMBER(38,0),
     franchise_id NUMBER(38,0),
     truck_opening_date DATE
-);
+)
+COMMENT = '{"origin":"sf_sit-is", "name":"tasty-bytes-dbt", "version":{"major":1, "minor":0}, "attributes":{"is_quickstart":0, "source":"sql"}}';
 
 -- order_header table build
 CREATE OR REPLACE TABLE tb_101.raw.order_header
@@ -107,7 +112,8 @@ CREATE OR REPLACE TABLE tb_101.raw.order_header
     order_tax_amount VARCHAR(16777216),
     order_discount_amount VARCHAR(16777216),
     order_total NUMBER(38,4)
-);
+)
+COMMENT = '{"origin":"sf_sit-is", "name":"tasty-bytes-dbt", "version":{"major":1, "minor":0}, "attributes":{"is_quickstart":0, "source":"sql"}}';
 
 -- order_detail table build
 CREATE OR REPLACE TABLE tb_101.raw.order_detail 
@@ -121,7 +127,8 @@ CREATE OR REPLACE TABLE tb_101.raw.order_detail
     unit_price NUMBER(38,4),
     price NUMBER(38,4),
     order_item_discount_amount VARCHAR(16777216)
-);
+)
+COMMENT = '{"origin":"sf_sit-is", "name":"tasty-bytes-dbt", "version":{"major":1, "minor":0}, "attributes":{"is_quickstart":0, "source":"sql"}}';
 
 -- customer loyalty table build
 CREATE OR REPLACE TABLE tb_101.raw.customer_loyalty
@@ -141,7 +148,8 @@ CREATE OR REPLACE TABLE tb_101.raw.customer_loyalty
     birthday_date DATE,
     e_mail VARCHAR(16777216),
     phone_number VARCHAR(16777216)
-);
+)
+COMMENT = '{"origin":"sf_sit-is", "name":"tasty-bytes-dbt", "version":{"major":1, "minor":0}, "attributes":{"is_quickstart":0, "source":"sql"}}';
 
 /*--
  raw zone table load 
