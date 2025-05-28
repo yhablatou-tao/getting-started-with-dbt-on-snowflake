@@ -3,6 +3,24 @@ USE WAREHOUSE tasty_bytes_dbt_wh;
 
 CREATE OR REPLACE DATABASE tb_101; -- source
 CREATE OR REPLACE SCHEMA tb_101.raw;
+CREATE OR REPLACE DATABASE tasty_bytes_dbt_db;
+CREATE OR REPLACE SCHEMA tasty_bytes_dbt_db.dev;
+CREATE OR REPLACE SCHEMA tasty_bytes_dbt_db.prod;
+
+-- integrations
+CREATE OR REPLACE API INTEGRATION GIT_INTEGRATION
+  API_PROVIDER = git_https_api
+  API_ALLOWED_PREFIXES = ('https://github.com/')
+  ENABLED = TRUE;
+
+CREATE OR REPLACE NETWORK RULE tasty_bytes_dbt_db.public.dbt_network_rule
+  MODE = EGRESS
+  TYPE = HOST_PORT
+  VALUE_LIST = ('hub.getdbt.com', 'codeload.github.com');
+
+CREATE OR REPLACE EXTERNAL ACCESS INTEGRATION dbt_access_integration
+  ALLOWED_NETWORK_RULES = (tasty_bytes_dbt_db.public.dbt_network_rule)
+  ENABLED = true;
 
 
 CREATE OR REPLACE FILE FORMAT tb_101.public.csv_ff 
